@@ -1,73 +1,28 @@
-# React + TypeScript + Vite
+# a11y-demo
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Demo aplikacja stworzona jako materiał na warsztat o dostępności (a11y).
 
-Currently, two official plugins are available:
+**Cel:**
+- **Opis:** Prosty projekt React + Vite prezentujący 6 typowych problemów dostępności, które uczestnicy warsztatu mogą przeglądać, testować i naprawiać.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**Szybkie uruchomienie:**
+- **Zainstaluj zależności:** `npm install` (lub `pnpm install`, `yarn`).
+- **Uruchom serwer developerski:** `npm run dev`.
 
-## React Compiler
+**Struktura i zawartość:**
+- **`src/pages/Home.tsx`:** Strona główna z opisem demo i linkami do przykładów.
+- **`src/pages/LowContrastText.tsx`:** Przykład tekstu o niskim kontraście.
+- **`src/pages/MissingAltText.tsx`:** Obraz bez tekstu alternatywnego (`alt`).
+- **`src/pages/MissingFormLabels.tsx`:** Formularz z brakującymi etykietami pól.
+- **`src/pages/EmptyLinks.tsx`:** Linki bez opisowego tekstu.
+- **`src/pages/EmptyButtons.tsx`:** Przyciski bez dostępnych nazw.
+- **`src/pages/MissingDocumentLanguage.tsx`:** Przykład dokumentu bez atrybutu `lang`.
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+**Jak używać na warsztacie:**
+- **Przegląd:** Otwórz stronę główną i przejdź przez każdy przykład, wyjaśniając dlaczego problem jest istotny z punktu widzenia osób korzystających z czytników ekranu, powiększeń, klawiatury itp.
+- **Ćwiczenia praktyczne:** Zadania mogą obejmować:
+  - Naprawę kontrastu kolorów (narzędzia i wartości WCAG).
+  - Dodanie sensownych atrybutów `alt` dla obrazów lub `alt=""` dla dekoracji.
+  - Powiązanie `<label htmlFor>` z `id` pól formularza.
+  - Zapewnienie tekstu opisowego w linkach i przyciskach, lub dodanie `aria-label` gdy to konieczne.
+  - Dodanie atrybutu `lang` w `index.html`.
