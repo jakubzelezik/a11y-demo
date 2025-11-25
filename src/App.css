@@ -1,0 +1,37 @@
+#root {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.app-nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: #1a1a1a;
+  color: #e0e0e0;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #444;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.app-nav a {
+  color: #64b5f6;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+}
+
+.app-nav a:hover {
+  color: #ffffff;
+  background-color: rgba(100, 181, 246, 0.1);
+}
+
+main {
+  padding: 1rem;
+}
