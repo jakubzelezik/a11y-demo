@@ -6,6 +6,7 @@ import MissingFormLabels from './pages/MissingFormLabels'
 import EmptyLinks from './pages/EmptyLinks'
 import EmptyButtons from './pages/EmptyButtons'
 import MissingDocumentLanguage from './pages/MissingDocumentLanguage'
+import DetectAccessibilityMistakes from './pages/DetectAccessibilityMistakes'
 
 
 
@@ -20,6 +21,7 @@ function App() {
         <Link to="/empty-links" style={{marginRight: 12}}>Puste linki</Link>
         <Link to="/empty-buttons" style={{marginRight: 12}}>Puste przyciski</Link>
         <Link to="/missing-document-language">Brakujący język</Link>
+        <Link to="/detect-accessibility-mistakes">Napraw stronę</Link>
       </nav>
 
       <main style={{padding: 12}}>
@@ -31,6 +33,7 @@ function App() {
           <Route path="/empty-links" element={<EmptyLinks />} />
           <Route path="/empty-buttons" element={<EmptyButtons />} />
           <Route path="/missing-document-language" element={<MissingDocumentLanguage />} />
+          <Route path="/detect-accessibility-mistakes" element={<DetectAccessibilityMistakes />} />
         </Routes>
       </main>
     </div>
